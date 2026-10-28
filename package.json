@@ -1,0 +1,16 @@
+{
+  "name": "such-man-storefront",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rare by Design — SUCH MAN streetwear concept storefront (concept artwork, not for sale)",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "serve": "npx serve ."
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}

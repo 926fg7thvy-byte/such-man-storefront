@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Local secrets
+.env
+.env.*
+
+# Logs
+*.log
+
+# Local visual test renders (review artifacts)
+art-test/
+
+# Generated review sheets (kept locally for review; excluded from the publish repo)
+review-exports/contact-sheet-shirts.png
+review-exports/contact-sheet-hats.png
+review-exports/crop_sheetshirt_a_top.png
+review-exports/crop_sheetshirt_b_hats.png
