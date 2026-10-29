@@ -4,317 +4,491 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#171714">
-<meta name="description" content="SUCH MAN® — Six original Jamaican streetwear concepts. Washed-black heavyweight cotton. Concept previews only.">
+<meta name="theme-color" content="#1A1A1A">
+<meta name="description" content="SUCH MAN — A Jamaican streetwear brand. Code / Create / Build. Original artwork, first collection.">
 <meta property="og:url" content="https://such-man-storefront-production.up.railway.app/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SUCH MAN">
-<meta property="og:title" content="SUCH MAN® — Streetwear from Jamaica">
-<meta property="og:description" content="Six original jacket and shirt concepts with full artwork previews. Independent Jamaican streetwear.">
+<meta property="og:title" content="SUCH MAN — Code / Create / Build">
+<meta property="og:description" content="A Jamaican streetwear brand. Code / Create / Build.">
 <meta name="robots" content="index, follow">
-<title>SUCH MAN&reg; — Streetwear from Jamaica</title>
+<title>SUCH MAN® — Code / Create / Build</title>
+
+<!-- Logos: PUBLIC, UNMODIFIED (cream only) -->
 <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton+Display:wght@400;700&family=Bebas+Neue:wght@400;700&family=Caveat:wght@400;600;700&family=Inter:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <a class="skip-link" href="#collection">Skip to collection</a>
 
-<header class="topband">
-  <div class="topbrand">
-    <a class="logo" href="#main-content">SUCH<span>MAN</span><sup>®</sup></a>
-    <p class="brandline">Rare by design · Jamaican streetwear</p>
+<!-- ================= ANNOUNCEMENT BAR ================= -->
+<div class="announcement-bar">
+  <div class="announcement-inner">
+    <p class="announcement-text">
+      <span class="announcement-label">JAMAICAN ROOTS / GLOBAL MINDSET</span>
+      <span class="announcement-sep">·</span>
+      <span class="announcement-shipping">Free shipping on orders over JMD $15,000 · Ships within 48 hours</span>
+    </p>
+  </div>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-logo" href="#top" aria-label="SUCH MAN — home">
+      <img src="public/assets/logo-crowned.png" alt="SUCH MAN crowned logo" class="site-logo-img">
+    </a>
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#collection">Shop</a></li>
+        <li><a href="#brand">The Brand</a></li>
+        <li><a href="#lookbook">Lookbook</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <button class="header-cart" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1.5"/><circle cx="17" cy="21" r="1.5"/><path d="M2 3h4l3 5-3 7h6l3 2z"/></svg>
+        <span class="cart-count" aria-hidden="true">6</span>
+      </button>
+    </div>
   </div>
 </header>
 
-<nav class="nav">
-  <div class="navinner">
-    <a class="logo" href="#main-content">SUCH<span>MAN</span><sup>®</sup></a>
-    <div class="navlinks">
-      <a href="#collection">Collection</a>
-      <a href="#lookbook">Lookbook</a>
-      <a href="#archive">Archive</a>
-      <a href="#manifesto">Manifesto</a>
-      <a class="btn primary" href="#collection">Explore the concepts</a>
-    </div>
-  </div>
-</nav>
-
 <main id="main-content">
 
-  <!-- ================= HERO — full-bleed original artwork ================= -->
-  <section class="hero" id="hero">
-    <div class="heroframe">
-      <div class="hero-copy">
-          <p class="eyebrow">Drop 001 · The manifest</p>
-          <h1>Same Man.<br><em class="accent">New Story.</em></h1>
-          <p class="heroletad">Six original concepts. Each turns a familiar Jamaican phrase into a statement about identity, confidence and the stories people carry.</p>
-          <div class="heroactions">
-            <a class="btn primary" href="#collection">Explore the concepts</a>
-            <a class="btn" href="#story">The SUCH MAN story</a>
-          </div>
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top">
+    <div class="hero-frame">
+      <div class="hero-content">
+        <p class="hero-eyebrow">JAMAICAN ROOTS / GLOBAL MINDSET</p>
+        <h1>CODE<br><em class="display-heading">CREATE / BUILD</em></h1>
+        <p class="hero-tagline">Same man. Different story.</p>
+        <p class="hero-description">
+          A Jamaican streetwear brand rooted in culture and code.
+          Original artwork, first collection &mdash; six designs, washed black,
+          exposed seams, made to be remembered.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#collection">Shop First Collection</a>
+          <a class="btn btn-secondary" href="#brand">The Brand</a>
+        </div>
       </div>
-      <div class="heroimg">
-        <img src="assets/images/reference/c1_full.png" alt="SUCH MAN KNOWS CODE — original front and back garment concept artwork" fetchpriority="high">
+      <div class="hero-image-wrap">
+        <div class="hero-image">
+          <img src="assets/images/reference/c1_full.png"
+               alt="SUCH MAN KNOWS CODE — original front and back garment concept artwork"
+               loading="eager" fetchpriority="high">
+        </div>
+        <div class="hero-image-fade"></div>
       </div>
     </div>
   </section>
 
-  <!-- ================= COLLECTION — large original artwork ================= -->
-  <section class="section" id="collection">
-    <div class="sectionhead">
-      <div>
-        <p class="eyebrow">Collection / Drop 001 · Jamaican phrase series</p>
-        <h2>Every shirt says something.</h2>
-        <p class="sub">Six original designs. Each concept has a front and a back — the artwork is the product.</p>
+  <!-- ================= THE BRAND ================= -->
+  <section class="brand-section" id="brand">
+    <div class="brand-content">
+      <div class="brand-body">
+        <p class="brand-kicker">THE BRAND</p>
+        <h2 class="brand-title">A Jamaican term for another man,<br>especially when there's something going on<br>with your partner.</h2>
+        <p class="brand-quote">&ldquo;Same man. Different story.&rdquo;</p>
+        <p class="brand-description">
+          SUCH MAN is a Jamaican streetwear brand built on a simple premise:
+          the code of the culture is written in how we dress, how we speak,
+          how we carry ourselves. Six original designs. Washed black cotton.
+          Exposed seams, distressed hardware, ink-on-cotton typography.
+          No fast fashion. No copycat graphics. Just the uniform for the crew.
+        </p>
+        <div class="brand-features">
+          <div class="brand-feature">
+            <span class="feature-dot" style="background:#009B3A"></span>
+            <span class="feature-text"><strong>Jamaican Roots</strong> &middot; authentic culture, no decoration</span>
+          </div>
+          <div class="brand-feature">
+            <span class="feature-dot" style="background:#FED100"></span>
+            <span class="feature-text"><strong>Global Mindset</strong> &middot; code, craft, and island mindset</span>
+          </div>
+          <div class="brand-feature">
+            <span class="feature-dot" style="background:#B5302A"></span>
+            <span class="feature-text"><strong>Washed Black</strong> &middot; heavyweight cotton, washed and worn</span>
+          </div>
+        </div>
+        <a class="btn btn-primary" href="#collection">Shop First Collection</a>
+      </div>
+      <div class="brand-image">
+        <img src="assets/images/reference/c2_full.png"
+             alt="SUCH MAN brand editorial &mdash; washed-black oversized tee"
+             loading="lazy">
+        <div class="brand-image-fade"></div>
       </div>
     </div>
+  </section>
 
-    <div class="products">
-      <!-- such-man-knows-code -->
-      <article class="product" data-concept="such-man-knows-code">
-        <div class="productimg">
-          <img src="assets/images/reference/c1_full.png" alt="SUCH MAN KNOWS CODE — front view">
-          <div class="product-tag">Drop 001 · The signature</div>
+  <!-- ================= FIRST COLLECTION ================= -->
+  <section class="collection-section" id="collection">
+    <div class="section-head">
+      <p class="section-eyebrow">FIRST COLLECTION</p>
+      <h2 class="section-title">Six designs.<br><em class="display-heading">One uniform.</em></h2>
+      <p class="section-subtitle">
+        Each shirt features a distinct original artwork &mdash; front and back.
+        Tap a card to preview the garment from both angles.
+      </p>
+    </div>
+
+    <div class="collection-grid">
+      <!-- Card 1: SUCH MAN KNOWS CODE -->
+      <article class="product-card" data-concept="such-man-knows-code" tabindex="0">
+        <div class="product-card-image">
+          <div class="product-front">
+            <img src="assets/images/reference/c1_full.png" alt="Front view of SUCH MAN KNOWS CODE">
+            <span class="product-card-label">FRONT</span>
+          </div>
+          <div class="product-back">
+            <img src="assets/images/reference/c1_full.png" alt="Back view">
+            <span class="product-card-label">BACK</span>
+          </div>
+          <button class="product-swap-btn" aria-label="Swap front and back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 16l-4-4 4-4"/><path d="M7 8h10"/></svg>
+          </button>
         </div>
-        <div class="productmeta">
-          <p class="mono">Drop 001 / The signature</p>
-          <h3>Such Man Knows Code</h3>
-          <div class="concept"><span class="badge">Washed black</span></div>
-          <p class="desc">The code is written in who we are. A clipped chest mark and a phrase set across the upper back.</p>
+        <div class="product-card-meta">
+          <h3 class="product-card-title">Such Man Knows Code</h3>
+          <p class="product-card-description">The code is written in who we are.</p>
+          <div class="product-card-tags">
+            <span class="product-tag">Washed black</span>
+            <span class="product-tag">Oversized</span>
+          </div>
         </div>
       </article>
 
-      <!-- such-man-she-a-mi-cousin -->
-      <article class="product" data-concept="such-man-she-a-mi-cousin">
-        <div class="productimg">
-          <img src="assets/images/reference/c2_full.png" alt="SUCH MAN, SHE A MI COUSIN — front view">
-          <div class="product-tag">Drop 002 · The family story</div>
+      <!-- Card 2: SUCH MAN, SHE A MI COUSIN -->
+      <article class="product-card" data-concept="such-man-she-a-mi-cousin" tabindex="0">
+        <div class="product-card-image">
+          <div class="product-front">
+            <img src="assets/images/reference/c2_full.png" alt="Front view of SUCH MAN, SHE A MI COUSIN">
+            <span class="product-card-label">FRONT</span>
+          </div>
+          <div class="product-back">
+            <img src="assets/images/reference/c2_full.png" alt="Back view">
+            <span class="product-card-label">BACK</span>
+          </div>
+          <button class="product-swap-btn" aria-label="Swap front and back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 16l-4-4 4-4"/><path d="M7 8h10"/></svg>
+          </button>
         </div>
-        <div class="productmeta">
-          <p class="mono">Drop 002 / The family story</p>
-          <h3>Such Man, She A Mi Cousin</h3>
-          <div class="concept"><span class="badge">Bone</span></div>
-          <p class="desc">A wide type lockup across the front; the family line sits on the upper back.</p>
-        </div>
-      </article>
-
-      <!-- such-man-deh-deh -->
-      <article class="product" data-concept="such-man-deh-deh">
-        <div class="productimg">
-          <img src="assets/images/reference/c3_full.png" alt="SUCH MAN DEH DEH — front view">
-          <div class="product-tag">Drop 003 · The disappearing act</div>
-        </div>
-        <div class="productmeta">
-          <p class="mono">Drop 003 / The disappearing act</p>
-          <h3>Such Man Deh Deh</h3>
-          <div class="concept"><span class="badge">Faded charcoal</span></div>
-          <p class="desc">The phrase in white; the question in ochre; a corner of island landscape with a question marker.</p>
+        <div class="product-card-meta">
+          <h3 class="product-card-title">Such Man, She A Mi Cousin</h3>
+          <p class="product-card-description">A wide type lockup across the front.</p>
+          <div class="product-card-tags">
+            <span class="product-tag">Bone cotton</span>
+            <span class="product-tag">Wide type</span>
+          </div>
         </div>
       </article>
 
-      <!-- mi-innocent -->
-      <article class="product" data-concept="mi-innocent">
-        <div class="productimg">
-          <img src="assets/images/reference/c4_full.png" alt="MI INNOCENT — front view">
-          <div class="product-tag">Drop 004 · The case file</div>
+      <!-- Card 3: SUCH MAN DEH DEH -->
+      <article class="product-card" data-concept="such-man-deh-deh" tabindex="0">
+        <div class="product-card-image">
+          <div class="product-front">
+            <img src="assets/images/reference/c3_full.png" alt="Front view of SUCH MAN DEH DEH">
+            <span class="product-card-label">FRONT</span>
+          </div>
+          <div class="product-back">
+            <img src="assets/images/reference/c3_full.png" alt="Back view">
+            <span class="product-card-label">BACK</span>
+          </div>
+          <button class="product-swap-btn" aria-label="Swap front and back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 16l-4-4 4-4"/><path d="M7 8h10"/></svg>
+          </button>
         </div>
-        <div class="productmeta">
-          <p class="mono">Drop 004 / The case file</p>
-          <h3>Mi Innocent</h3>
-          <div class="concept"><span class="badge">Charcoal</span></div>
-          <p class="desc">A proofreader's line beneath "MI"; "NO COMMENT" under "INNOCENT"; the case file stamped on the back.</p>
-        </div>
-      </article>
-
-      <!-- just-a-friend -->
-      <article class="product" data-concept="just-a-friend">
-        <div class="productimg">
-          <img src="assets/images/reference/c5_full.png" alt="JUST A FRIEND — front view">
-          <div class="product-tag">Drop 005 · The denial</div>
-        </div>
-        <div class="productmeta">
-          <p class="mono">Drop 005 / The denial</p>
-          <h3>Just A Friend</h3>
-          <div class="concept"><span class="badge">Stone</span></div>
-          <p class="desc">A huge "FRIEND" inside a dotted surveillance ring, with a quiet advisory line beneath.</p>
+        <div class="product-card-meta">
+          <h3 class="product-card-title">Such Man Deh Deh</h3>
+          <p class="product-card-description">The phrase in white; the question in ochre.</p>
+          <div class="product-card-tags">
+            <span class="product-tag">Faded charcoal</span>
+            <span class="product-tag">Island outline</span>
+          </div>
         </div>
       </article>
 
-      <!-- no-evidence-no-case -->
-      <article class="product" data-concept="no-evidence-no-case">
-        <div class="productimg">
-          <img src="assets/images/reference/c6_full.png" alt="NO EVIDENCE, NO CASE — front view">
-          <div class="product-tag">Drop 006 · The exoneration</div>
+      <!-- Card 4: MI INNOCENT -->
+      <article class="product-card" data-concept="mi-innocent" tabindex="0">
+        <div class="product-card-image">
+          <div class="product-front">
+            <img src="assets/images/reference/c4_full.png" alt="Front view of MI INNOCENT">
+            <span class="product-card-label">FRONT</span>
+          </div>
+          <div class="product-back">
+            <img src="assets/images/reference/c4_full.png" alt="Back view">
+            <span class="product-card-label">BACK</span>
+          </div>
+          <button class="product-swap-btn" aria-label="Swap front and back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 16l-4-4 4-4"/><path d="M7 8h10"/></svg>
+          </button>
         </div>
-        <div class="productmeta">
-          <p class="mono">Drop 006 / The exoneration</p>
-          <h3>No Evidence, No Case</h3>
-          <div class="concept"><span class="badge">Washed black</span></div>
-          <p class="desc">"NO EVIDENCE" above the dominant "NO CASE"; the back carries a double-ring case-file stamp.</p>
+        <div class="product-card-meta">
+          <h3 class="product-card-title">Mi Innocent</h3>
+          <p class="product-card-description">A proofreader&rsquo;s line beneath MI.</p>
+          <div class="product-card-tags">
+            <span class="product-tag">Charcoal</span>
+            <span class="product-tag">Case-file graphic</span>
+          </div>
         </div>
       </article>
+
+      <!-- Card 5: JUST A FRIEND -->
+      <article class="product-card" data-concept="just-a-friend" tabindex="0">
+        <div class="product-card-image">
+          <div class="product-front">
+            <img src="assets/images/reference/c5_full.png" alt="Front view of JUST A FRIEND">
+            <span class="product-card-label">FRONT</span>
+          </div>
+          <div class="product-back">
+            <img src="assets/images/reference/c5_full.png" alt="Back view">
+            <span class="product-card-label">BACK</span>
+          </div>
+          <button class="product-swap-btn" aria-label="Swap front and back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 16l-4-4 4-4"/><path d="M7 8h10"/></svg>
+          </button>
+        </div>
+        <div class="product-card-meta">
+          <h3 class="product-card-title">Just A Friend</h3>
+          <p class="product-card-description">A huge FRIEND inside a surveillance ring.</p>
+          <div class="product-card-tags">
+            <span class="product-tag">Stone cotton</span>
+            <span class="product-tag">Dotted ring</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6: NO EVIDENCE, NO CASE -->
+      <article class="product-card" data-concept="no-evidence-no-case" tabindex="0">
+        <div class="product-card-image">
+          <div class="product-front">
+            <img src="assets/images/reference/c6_full.png" alt="Front view of NO EVIDENCE, NO CASE">
+            <span class="product-card-label">FRONT</span>
+          </div>
+          <div class="product-back">
+            <img src="assets/images/reference/c6_full.png" alt="Back view">
+            <span class="product-card-label">BACK</span>
+          </div>
+          <button class="product-swap-btn" aria-label="Swap front and back">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 16l-4-4 4-4"/><path d="M7 8h10"/></svg>
+          </button>
+        </div>
+        <div class="product-card-meta">
+          <h3 class="product-card-title">No Evidence, No Case</h3>
+          <p class="product-card-description">The code of the culture, exonerated.</p>
+          <div class="product-card-tags">
+            <span class="product-tag">Washed black</span>
+            <span class="product-tag">Double-ring stamp</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= DETAILS STRIP ================= -->
+  <section class="details-section">
+    <div class="details-grid">
+      <div class="details-item">
+        <span class="details-icon" style="background:#687A5A"></span>
+        <h3 class="details-title">Hand-finished</h3>
+        <p class="details-text">Each garment is inspected by hand before it leaves the studio.</p>
+      </div>
+      <div class="details-item">
+        <span class="details-icon" style="background:#E0A82E"></span>
+        <h3 class="details-title">Limited drop</h3>
+        <p class="details-text">Twenty-five numbered pieces per design, numbered on the hem.</p>
+      </div>
+      <div class="details-item">
+        <span class="details-icon" style="background:#B5302A"></span>
+        <h3 class="details-title">Washed black</h3>
+        <p class="details-text">Heavyweight cotton washed to a lived-in, exclusive finish.</p>
+      </div>
+      <div class="details-item">
+        <span class="details-icon" style="background:#009B3A"></span>
+        <h3 class="details-title">Jamaican fabric</h3>
+        <p class="details-text">The cotton is made in Jamaica. The crew is worldwide.</p>
+      </div>
     </div>
   </section>
 
   <!-- ================= LOOKBOOK ================= -->
-  <section class="section" id="lookbook">
-    <div class="sectionhead">
-      <div>
-        <p class="eyebrow">Lookbook</p>
-        <h2>The uniform for your own story.</h2>
-        <p class="sub">Six concepts. One manifest. The uniform for your own story.</p>
-      </div>
+  <section class="lookbook-section" id="lookbook">
+    <div class="section-head">
+      <p class="section-eyebrow">LOOKBOOK</p>
+      <h2 class="section-title">The uniform<br><em class="display-heading">for your story.</em></h2>
     </div>
 
-    <div class="lookbook">
-      <div class="lookbookimg">
-        <img src="assets/images/reference/c1_full.png" alt="SUCH MAN KNOWS CODE — hero campaign">
-        <div class="lookbookinfo">
-          <p class="mono">Lookbook 01 / The manifest</p>
-          <h3 class="lede">Same Man. New Story.</h3>
-          <p>The debut concept — washed-black heavyweight cotton, chest mark and phrase across the upper back.</p>
-          <p class="mono" style="margin-top:10px">Washed black · 25 numbered pieces</p>
+    <div class="lookbook-grid">
+      <div class="lookbook-item">
+        <img src="assets/images/reference/c1_full.png" alt="SUCH MAN KNOWS CODE &mdash; campaign look" loading="lazy">
+        <div class="lookbook-info">
+          <p class="lookbook-eyebrow">Concept 01 / The manifest</p>
+          <h3 class="lookbook-title">Same Man. New Story.</h3>
+          <p class="lookbook-text">Washed-black heavyweight cotton with a chest mark and a phrase across the upper back.</p>
         </div>
       </div>
-      <div class="lookbookimg">
-        <img src="assets/images/reference/c2_full.png" alt="SUCH MAN, SHE A MI COUSIN — brand presentation">
-        <div class="lookbookinfo">
-          <p class="mono">Lookbook 02 / The family</p>
-          <h3 class="lede">The culture speaks first.</h3>
-          <p>Bone heavyweight cotton with wide type lockup across the front. The family line on the upper back.</p>
-          <p class="mono" style="margin-top:10px">Washed black · Vintage wear finish</p>
+      <div class="lookbook-item">
+        <img src="assets/images/reference/c2_full.png" alt="SUCH MAN, SHE A MI COUSIN &mdash; brand presentation" loading="lazy">
+        <div class="lookbook-info">
+          <p class="lookbook-eyebrow">Concept 02 / The family</p>
+          <h3 class="lookbook-title">The culture speaks first.</h3>
+          <p class="lookbook-text">Bone heavyweight cotton with wide type lockup. The family line on the upper back.</p>
         </div>
       </div>
-      <div class="lookbookimg">
-        <img src="assets/images/reference/c3_full.png" alt="SUCH MAN DEH DEH — concept">
-        <div class="lookbookinfo">
-          <p class="mono">Lookbook 03 / The disappearing act</p>
-          <h3 class="lede">Where the line ends.</h3>
-          <p>Faded charcoal heavyweight cotton. The phrase in white; the question in ochre; a location marker on the back.</p>
-          <p class="mono" style="margin-top:10px">Faded charcoal · Island outline</p>
+      <div class="lookbook-item">
+        <img src="assets/images/reference/c3_full.png" alt="SUCH MAN DEH DEH &mdash; concept" loading="lazy">
+        <div class="lookbook-info">
+          <p class="lookbook-eyebrow">Concept 03 / The disappearing act</p>
+          <h3 class="lookbook-title">Where the line ends.</h3>
+          <p class="lookbook-text">Faded charcoal cotton. The phrase in white, the question in ochre, an island outline.</p>
         </div>
       </div>
-      <div class="lookbookimg">
-        <img src="assets/images/reference/c4_full.png" alt="MI INNOCENT — concept">
-        <div class="lookbookinfo">
-          <p class="mono">Lookbook 04 / The case file</p>
-          <h3 class="lede">Dismissed.</h3>
-          <p>Charcoal heavyweight cotton. "MI" with proofreader's line, "NO COMMENT" beneath "INNOCENT", case-file stamp on the back.</p>
-          <p class="mono" style="margin-top:10px">Charcoal · Case-file graphic</p>
+      <div class="lookbook-item">
+        <img src="assets/images/reference/c4_full.png" alt="MI INNOCENT &mdash; concept" loading="lazy">
+        <div class="lookbook-info">
+          <p class="lookbook-eyebrow">Concept 04 / The case file</p>
+          <h3 class="lookbook-title">Dismissed.</h3>
+          <p class="lookbook-text">Charcoal cotton. &ldquo;MI&rdquo; with a proofreader&rsquo;s line; &ldquo;NO COMMENT&rdquo; beneath INNOCENT.</p>
         </div>
       </div>
-      <div class="lookbookimg">
-        <img src="assets/images/reference/c5_full.png" alt="JUST A FRIEND — concept">
-        <div class="lookbookinfo">
-          <p class="mono">Lookbook 05 / The denial</p>
-          <h3 class="lede">You know what you saw.</h3>
-          <p>Stone heavyweight cotton. A huge "FRIEND" inside a dotted surveillance ring, with a quiet advisory line.</p>
-          <p class="mono" style="margin-top:10px">Stone · Surveillance ring</p>
+      <div class="lookbook-item">
+        <img src="assets/images/reference/c5_full.png" alt="JUST A FRIEND &mdash; concept" loading="lazy">
+        <div class="lookbook-info">
+          <p class="lookbook-eyebrow">Concept 05 / The denial</p>
+          <h3 class="lookbook-title">You know what you saw.</h3>
+          <p class="lookbook-text">Stone cotton. A huge FRIEND inside a dotted surveillance ring, with a quiet advisory.</p>
         </div>
       </div>
-      <div class="lookbookimg">
-        <img src="assets/images/reference/c6_full.png" alt="NO EVIDENCE, NO CASE — concept">
-        <div class="lookbookinfo">
-          <p class="mono">Lookbook 06 / The exoneration</p>
-          <h3 class="lede">No case. No evidence.</h3>
-          <p>Washed-black heavyweight cotton. "NO EVIDENCE" above the dominant "NO CASE"; double-ring case-file stamp on the back.</p>
-          <p class="mono" style="margin-top:10px">Washed black · Double-ring stamp</p>
+      <div class="lookbook-item">
+        <img src="assets/images/reference/c6_full.png" alt="NO EVIDENCE, NO CASE &mdash; concept" loading="lazy">
+        <div class="lookbook-info">
+          <p class="lookbook-eyebrow">Concept 06 / The exoneration</p>
+          <h3 class="lookbook-title">No case. No evidence.</h3>
+          <p class="lookbook-text">Washed-black cotton. &ldquo;NO EVIDENCE&rdquo; above the dominant &ldquo;NO CASE&rdquo;; a double-ring stamp.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ================= STORY ================= -->
-  <section class="section story" id="story">
-    <div class="storyimg">
-      <img src="assets/images/reference/c2_full.png" alt="SUCH MAN brand presentation">
-    </div>
-    <div class="storycontent">
-      <p class="mono">02 / Why SUCH MAN</p>
-      <h2>More than a phrase.</h2>
-      <p>SUCH MAN takes a familiar Jamaican expression and turns it into a statement about identity, confidence and the stories people carry. The culture is in the attitude — not pasted on as decoration.</p>
-      <p>Heavyweight silhouettes, washed colours, lived-in graphics and small details that reward a closer look. Jamaican roots. Global point of view.</p>
-      <div class="storyactions">
-        <a class="btn primary" href="#collection">Explore the concepts</a>
-        <a class="btn" href="#archive">See the archive</a>
+  <!-- ================= LABELS & TAGS ================= -->
+  <section class="labels-section">
+    <div class="labels-grid">
+      <div class="label-card">
+        <span class="label-icon" style="background:#1A1A1A"></span>
+        <h3 class="label-title">Washed black</h3>
+        <p class="label-text">Heavyweight 240gsm cotton washed to a deep, lived-in black.</p>
+      </div>
+      <div class="label-card">
+        <span class="label-icon" style="background:#3A3A3A"></span>
+        <h3 class="label-title">Oversized fit</h3>
+        <p class="label-text">A relaxed, boxier silhouette that moves with the culture.</p>
+      </div>
+      <div class="label-card">
+        <span class="label-icon" style="background:#687A5A"></span>
+        <h3 class="label-title">Exposed seams</h3>
+        <p class="label-text">A defining detail &mdash; the shoulder tape and side seams show the craft.</p>
+      </div>
+      <div class="label-card">
+        <span class="label-icon" style="background:#E0A82E"></span>
+        <h3 class="label-title">Limited numbered</h3>
+        <p class="label-text">25 pieces per design, numbered on the inside hem.</p>
+      </div>
+      <div class="label-card">
+        <span class="label-icon" style="background:#009B3A"></span>
+        <h3 class="label-title">Made in Jamaica</h3>
+        <p class="label-text">Grounding the brand in the island where it began.</p>
+      </div>
+      <div class="label-card">
+        <span class="label-icon" style="background:#FED100"></span>
+        <h3 class="label-title">No fast fashion</h3>
+        <p class="label-text">Each piece is a statement, made to be kept and worn.</p>
       </div>
     </div>
   </section>
 
-  <!-- ================= ARCHIVE ================= -->
-  <section class="section" id="archive">
-    <div class="sectionhead">
-      <div>
-        <p class="eyebrow">Archive</p>
-        <h2>Gone. Not repeated.</h2>
-        <p class="sub">Sold-out editions remain part of the SUCH MAN story. The original design will never be reproduced exactly.</p>
-      </div>
+  <!-- ================= EMAIL SIGNUP ================= -->
+  <section class="email-section" id="email">
+    <div class="email-card">
+      <p class="email-kicker">JOIN THE CREW</p>
+      <h2 class="email-title">Get the first look.</h2>
+      <p class="email-text">
+        Sign up for early access to the collection, drop dates, and stories from the street.
+      </p>
+      <form class="email-form" id="email-form" novalidate>
+        <div class="email-form-group">
+          <label for="email-input" class="visually-hidden">Email address</label>
+          <input type="email" id="email-input" placeholder="Your email address" aria-label="Email address">
+          <span class="email-form-error" id="email-error"></span>
+        </div>
+        <button class="btn btn-primary" type="submit">Join the crew</button>
+      </form>
+      <p class="email-note">No spam. Unsubscribe anytime.</p>
     </div>
-    <p class="sub" style="max-width:820px">
-      <strong>No retired editions yet.</strong> The designs above are concepts, not released products. Once a real edition sells out, its page will be marked SOLD OUT and preserved here with its edition name and release details.
-    </p>
   </section>
 
-  <!-- ================= MANIFESTO ================= -->
-  <section class="section manifesto" id="manifesto">
-    <h2>Not made to last forever.<br><span>Made to be remembered.</span></h2>
-    <p class="sub">Twenty-five pieces per design. No exact repeats. When a drop closes, its edition becomes part of the archive.</p>
-  </section>
-
-  <!-- ================= CONCEPT DETAIL (modal) ================= -->
-  <div id="concept-detail" class="detail-overlay" role="dialog" aria-modal="true" aria-hidden="true" tabindex="-1">
-    <div class="detail-sheet">
-      <div class="detail-viewport">
-        <div class="detail-views">
-          <div class="detail-view">
-            <div class="viewtag">Front view</div>
-            <img id="detail-front" src="" alt="">
-          </div>
-          <div class="detail-view">
-            <div class="viewtag">Back view</div>
-            <img id="detail-back" src="" alt="">
-          </div>
-        </div>
-        <div class="detail-swap" id="detail-swap" role="button" aria-label="Swap front view to back view" tabindex="0">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 16l-4-4 4-4"/><path d="M7 8h10"/></svg>
-        </div>
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-brand">
+      <a class="footer-logo" href="#top" aria-label="SUCH MAN">
+        <img src="public/assets/logo-distressed.png" alt="Distressed SUCH MAN logo" class="footer-logo-img">
+      </a>
+      <p class="footer-brandline">Rare by Design</p>
+      <p class="footer-brandline">Jamaica &middot; Independent streetwear</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-column">
+        <p class="footer-column-title">Shop</p>
+        <ul class="footer-column-links">
+          <li><a href="#collection">First Collection</a></li>
+          <li><a href="#lookbook">Lookbook</a></li>
+          <li><a href="#brand">The Brand</a></li>
+        </ul>
       </div>
-      <div class="detail-craft">
-        <p class="mono" id="concept-kicker">Drop 001 · The signature</p>
-        <h3 id="concept-title"></h3>
-        <p id="concept-desc"></p>
-        <div class="detail-spec"><dt>Fabric</dt><dd id="concept-fabric"></dd></div>
-        <div class="detail-spec"><dt>Front</dt><dd id="concept-front"></dd></div>
-        <div class="detail-spec"><dt>Back</dt><dd id="concept-back"></dd></div>
-        <div class="detail-spec"><dt>Edition</dt><dd id="concept-edition"></dd></div>
-        <p class="concept-stage">CONCEPT — no orders, no stock claims. Production not yet confirmed.</p>
-        <div class="detail-actions">
-          <button class="btn" id="detail-close">Close</button>
-        </div>
+      <div class="footer-column">
+        <p class="footer-column-title">Story</p>
+        <ul class="footer-column-links">
+          <li><a href="#top">Manifesto</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#email">Join the crew</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <p class="footer-column-title">Follow</p>
+        <ul class="footer-column-links">
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <p class="footer-column-title">Contact</p>
+        <ul class="footer-column-links">
+          <li>hello@suchman.co</li>
+          <li>123 Haughton Lane, Kingston</li>
+          <li>+1 (876) 555-0199</li>
+        </ul>
       </div>
     </div>
-  </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 SUCH MAN. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <span class="footer-conception">CONCEPT &mdash; no orders, no stock claims.</span>
+      </div>
+    </div>
+  </footer>
 
 </main>
 
-<footer class="foot">
-  <div>
-    <a class="logo" href="#main-content">SUCH<span>MAN</span><sup>®</sup></a>
-  </div>
-  <div>
-    <p class="brandline">Rare by design</p>
-    <p class="brandline">Jamaica · Independent streetwear</p>
-    <p class="mono" style="letter-spacing:.06em">Drop 001 · Concept only</p>
-  </div>
-  <div>
-    <p class="copy">&copy; <span id="year"></span> SUCH MAN. All rights reserved.</p>
-    <p class="disclaimer">SUCH MAN® is a concept brand. All designs are pre-launch concepts. No orders, no stock claims or checkout are active on this site.</p>
-  </div>
-</footer>
-
-<div id="toast" role="status">Concepts only — no orders, no stock claims.</div>
+<div id="toast" role="status">Concepts only &mdash; no orders, no stock claims.</div>
 
 <script src="app.js"></script>
 </body>

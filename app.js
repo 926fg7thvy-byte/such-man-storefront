@@ -1,31 +1,129 @@
 /* ============================================================
    SUCH MAN — app.js
-   Concept detail dialog (modal), photo gallery, and toast.
-   Redesigned: full-bleed original artwork, editorial layout.
+   Product card front/back swap, toast, email signup, scroll fade-up.
    ============================================================ */
 
 (function () {
   "use strict";
 
-  var detail = document.getElementById("concept-detail");
-  var detailFront = document.getElementById("detail-front");
-  var detailBack = document.getElementById("detail-back");
-  var detailTitle = document.getElementById("concept-title");
-  var detailKicker = document.getElementById("concept-kicker");
-  var detailDesc = document.getElementById("concept-desc");
-  var detailFabric = document.getElementById("concept-fabric");
-  var detailFrontLabel = document.getElementById("concept-front");
-  var detailBackLabel = document.getElementById("concept-back");
-  var detailEdition = document.getElementById("concept-edition");
-  var detailClose = document.getElementById("detail-close");
-  var detailSwap = document.getElementById("detail-swap");
+  // ---- Product card interactions: FRONT/BACK swap ----
+
+  var cards = document.querySelectorAll(".product-card");
+
+  cards.forEach(function (card) {
+    var frontView = card.querySelector(".product-front");
+    var backView = card.querySelector(".product-back");
+    var swapBtn = card.querySelector(".product-swap-btn");
+    var concept = card.getAttribute("data-concept");
+
+    // Determine which view is visible (data attribute for reliability)
+    function updateSwapIcon() {
+      var isFront = frontView.style.opacity !== "0";
+      var icon = swapBtn.querySelector("svg");
+      if (isFront) {
+        icon.setAttribute("viewBox", "0 0 24 24");
+        icon.innerHTML =
+          '<path d="M7 16l-4-4 4-4"/><path d="M7 8h10"/>';
+      } else {
+        icon.setAttribute("viewBox", "0 0 24 24");
+        icon.innerHTML =
+          '<path d="M7 16l-4-4 4-4"/><path d="M7 8h10"/>';
+      }
+    }
+
+    // Click on card opens a detail modal
+    card.addEventListener("click", function () {
+      openDetail(concept);
+    });
+
+    // Swap button (within the card) toggles front/back
+    if (swapBtn) {
+      swapBtn.addEventListener("click", function (event) {
+        event.stopPropagation();
+        var isFrontVisible = frontView.style.opacity !== "0";
+        frontView.style.opacity = isFrontVisible ? "0" : "1";
+        frontView.style.transform = isFrontVisible ? "scale(0.95)" : "scale(1)";
+        backView.style.opacity = isFrontVisible ? "1" : "0";
+        backView.style.transform = isFrontVisible ? "scale(1)" : "scale(0.95)";
+        updateSwapIcon();
+      });
+    }
+  });
+
+  // ---- Detail modal (overlay) ----
+
+  var detailOverlay = document.createElement("div");
+  detailOverlay.setAttribute("id", "concept-detail");
+  detailOverlay.setAttribute("role", "dialog");
+  detailOverlay.setAttribute("aria-modal", "true");
+  detailOverlay.setAttribute("aria-hidden", "true");
+  detailOverlay.setAttribute("tabindex", "-1");
+  detailOverlay.className = "detail-overlay";
+
+  var detailSheet = document.createElement("div");
+  detailSheet.className = "detail-sheet";
+  detailOverlay.appendChild(detailSheet);
+
+  var detailViewport = document.createElement("div");
+  detailViewport.className = "detail-viewport";
+  detailSheet.appendChild(detailViewport);
+
+  var detailViews = document.createElement("div");
+  detailViews.className = "detail-views";
+  detailViewport.appendChild(detailViews);
+
+  var detailViewFront = document.createElement("div");
+  detailViewFront.className = "detail-view";
+  detailViewFront.innerHTML =
+    '<div class="viewtag">Front view</div><img id="detail-front" src="" alt="">';
+  detailViews.appendChild(detailViewFront);
+
+  var detailViewBack = document.createElement("div");
+  detailViewBack.className = "detail-view";
+  detailViewBack.innerHTML =
+    '<div class="viewtag">Back view</div><img id="detail-back" src="" alt="">';
+  detailViews.appendChild(detailViewBack);
+
+  var detailSwap = document.createElement("div");
+  detailSwap.className = "detail-swap";
+  detailSwap.setAttribute("role", "button");
+  detailSwap.setAttribute("aria-label", "Swap front view to back view");
+  detailSwap.tabIndex = "0";
+  detailSwap.innerHTML =
+    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 16l-4-4 4-4"/><path d="M7 8h10"/></svg>';
+  detailViewport.appendChild(detailSwap);
+
+  var detailCraft = document.createElement("div");
+  detailCraft.className = "detail-craft";
+  detailSheet.appendChild(detailCraft);
+
+  var detailKicker = document.createElement("p");
+  detailKicker.className = "mono";
+  detailCraft.appendChild(detailKicker);
+
+  var detailTitle = document.createElement("h3");
+  detailCraft.appendChild(detailTitle);
+
+  var detailDesc = document.createElement("p");
+  detailCraft.appendChild(detailDesc);
+
+  var detailSpec = document.createElement("div");
+  detailSpec.className = "detail-spec";
+  detailCraft.appendChild(detailSpec);
+
+  var detailClose = document.createElement("button");
+  detailClose.className = "btn";
+  detailClose.id = "detail-close";
+  detailClose.textContent = "Close";
+  detailCraft.appendChild(detailClose);
+
+  document.body.appendChild(detailOverlay);
+
   var toast = document.getElementById("toast");
   var yearEl = document.getElementById("year");
-
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ---- concept data (verbatim phrase wording, concept-stage labels) ----
-
+  // ---- Concept data (verbatim phrase wording) ----
   var CONCEPTS = {
     "such-man-knows-code": {
       phrase: "SUCH MAN KNOWS CODE",
@@ -57,16 +155,16 @@
     "mi-innocent": {
       phrase: "MI INNOCENT",
       kicker: "Drop 004 · The case file",
-      desc: "A proofreader's line beneath 'MI'; 'NO COMMENT' under 'INNOCENT'; the case file stamped on the back.",
+      desc: "A proofreader&rsquo;s line beneath &lsquo;MI&rsquo;; &lsquo;NO COMMENT&rsquo; under &lsquo;INNOCENT&rsquo;; the case file stamped on the back.",
       fabric: "Charcoal heavyweight cotton",
-      front: "Proofreader's line + 'NO COMMENT'",
-      back: "Case-file stamp, 'CASE STATUS: DISMISSED'",
+      front: "Proofreader&rsquo;s line + &lsquo;NO COMMENT&rsquo;",
+      back: "Case-file stamp, &lsquo;CASE STATUS: DISMISSED&rsquo;",
       edition: "Drop 004 · 25 numbered pieces"
     },
     "just-a-friend": {
       phrase: "JUST A FRIEND",
       kicker: "Drop 005 · The denial",
-      desc: "A huge 'FRIEND' inside a dotted surveillance ring, with a quiet advisory line beneath.",
+      desc: "A huge &lsquo;FRIEND&rsquo; inside a dotted surveillance ring, with a quiet advisory line beneath.",
       fabric: "Stone heavyweight cotton",
       front: "Surveillance-ring graphic around FRIEND",
       back: "Ring motif and the advisory line",
@@ -75,18 +173,17 @@
     "no-evidence-no-case": {
       phrase: "NO EVIDENCE, NO CASE",
       kicker: "Drop 006 · The exoneration",
-      desc: "\"NO EVIDENCE\" above the dominant 'NO CASE'; the back carries a double-ring case-file stamp.",
+      desc: "&ldquo;NO EVIDENCE&rdquo; above the dominant &lsquo;NO CASE&rsquo;; the back carries a double-ring case-file stamp.",
       fabric: "Washed-black heavyweight cotton",
-      front: "Huge 'NO CASE' + 'NO EVIDENCE'",
+      front: "Huge &lsquo;NO CASE&rsquo; + &lsquo;NO EVIDENCE&rsquo;",
       back: "Double-ring case-file stamp",
       edition: "Drop 006 · 25 numbered pieces"
     }
   };
 
-  // ---- modal with proper keyboard accessibility and front/back swap ----
+  // ---- Modal open/close ----
 
   var lastFocusedElement = null;
-  var currentConcept = null;
 
   function openDetail(concept) {
     var data = CONCEPTS[concept];
@@ -97,22 +194,32 @@
     detailTitle.textContent = data.phrase;
     detailKicker.textContent = data.kicker;
     detailDesc.textContent = data.desc;
-    detailFabric.textContent = data.fabric;
-    detailFrontLabel.textContent = data.front;
-    detailBackLabel.textContent = data.back;
-    detailEdition.textContent = data.edition;
-    detailFront.src = "assets/product/" + concept + "/front.svg";
-    detailBack.src = "assets/product/" + concept + "/back.svg";
+    detailSpec.innerHTML =
+      '<div><dt>Fabric</dt><dd id="concept-fabric"></dd></div>' +
+      '<div><dt>Front</dt><dd id="concept-front"></dd></div>' +
+      '<div><dt>Back</dt><dd id="concept-back"></dd></div>' +
+      '<div><dt>Edition</dt><dd id="concept-edition"></dd></div>';
+    document.getElementById("concept-fabric").textContent = data.fabric;
+    document.getElementById("concept-front").textContent = data.front;
+    document.getElementById("concept-back").textContent = data.back;
+    document.getElementById("concept-edition").textContent = data.edition;
+
+    detailViewFront.querySelector("img").src = "assets/product/" + concept + "/front.svg";
+    detailViewBack.querySelector("img").src = "assets/product/" + concept + "/back.svg";
+    detailViewFront.style.opacity = "1";
+    detailViewFront.style.transform = "scale(1)";
+    detailViewBack.style.opacity = "0";
+    detailViewBack.style.transform = "scale(0.95)";
     currentConcept = concept;
-    detail.setAttribute("aria-hidden", "false");
-    detail.setAttribute("tabindex", "-1");
-    detail.scrollTop = 0;
+
+    detailOverlay.setAttribute("aria-hidden", "false");
+    detailOverlay.setAttribute("tabindex", "-1");
+    detailOverlay.scrollTop = 0;
     document.body.style.overflow = "hidden";
     toast.classList.remove("show");
 
-    // Focus the swap button inside the dialog
     setTimeout(function () {
-      var swap = detail.querySelector(".detail-swap");
+      var swap = detailOverlay.querySelector(".detail-swap");
       if (swap) {
         swap.setAttribute("tabindex", "-1");
         swap.focus();
@@ -122,59 +229,80 @@
   }
 
   function closeDetail() {
-    detail.setAttribute("aria-hidden", "true");
-    detail.setAttribute("tabindex", "-1");
+    detailOverlay.setAttribute("aria-hidden", "true");
+    detailOverlay.setAttribute("tabindex", "-1");
     document.body.style.overflow = "";
     if (lastFocusedElement && lastFocusedElement.focus) {
       lastFocusedElement.focus();
     }
   }
 
-  // ---- card click opens detail ----
-
-  var conceptCards = Array.prototype.slice.call(
-    document.querySelectorAll(".products .product")
-  );
-
+  // ---- Card click opens detail ----
+  var conceptCards = document.querySelectorAll(".product-card");
   conceptCards.forEach(function (card) {
     card.addEventListener("click", function () {
       openDetail(card.getAttribute("data-concept"));
     });
   });
 
-  // ---- close: Escape / overlay / close button ----
-
+  // ---- Close: Escape / overlay / close button ----
   if (detailClose) {
-    detailClose.addEventListener("click", function () { closeDetail(); });
+    detailClose.addEventListener("click", closeDetail);
   }
-  if (detail) {
-    detail.addEventListener("click", function (event) {
-      if (event.target === detail) closeDetail();
-    });
-  }
+  detailOverlay.addEventListener("click", function (event) {
+    if (event.target === detailOverlay) closeDetail();
+  });
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && detail.getAttribute("aria-hidden") !== "true") {
+    if (event.key === "Escape" && detailOverlay.getAttribute("aria-hidden") !== "true") {
       closeDetail();
     }
   });
 
-  // ---- detail-swap: swap front/back artwork ----
-
+  // ---- Detail swap (within modal) ----
+  var currentConcept = null;
   if (detailSwap) {
     detailSwap.addEventListener("click", function () {
       if (!currentConcept) return;
-      var front = detailFront.src;
-      var back = detailBack.src;
-      var isFrontShowing = front.includes("front.svg");
-      detailFront.src = isFrontShowing ? "assets/product/" + currentConcept + "/back.svg" : "assets/product/" + currentConcept + "/front.svg";
-      detailBack.src = isFrontShowing ? "assets/product/" + currentConcept + "/front.svg" : "assets/product/" + currentConcept + "/back.svg";
+      var frontImg = document.getElementById("detail-front");
+      var backImg = document.getElementById("detail-back");
+      var isFrontShowing = frontImg.style.opacity !== "0";
+      frontImg.style.opacity = isFrontShowing ? "0" : "1";
+      frontImg.style.transform = isFrontShowing ? "scale(0.95)" : "scale(1)";
+      backImg.style.opacity = isFrontShowing ? "1" : "0";
+      backImg.style.transform = isFrontShowing ? "scale(1)" : "scale(0.95)";
     });
   }
 
-  // ---- toast (simple, non-intrusive) ----
-
+  // ---- Toast ----
   setTimeout(function () {
     toast.classList.add("show");
   }, 1400);
+
+  // ---- Email signup ----
+  var emailForm = document.getElementById("email-form");
+  var emailInput = document.getElementById("email-input");
+  var emailError = document.getElementById("email-error");
+
+  if (emailForm && emailInput) {
+    emailForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var email = emailInput.value.trim();
+      if (!email) {
+        emailError.textContent = "Please enter your email address.";
+        emailInput.focus();
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        emailError.textContent = "Please enter a valid email address.";
+        emailInput.focus();
+        return;
+      }
+      emailError.textContent = "";
+      emailForm.reset();
+      toast.textContent = "Joined the crew — welcome.";
+      toast.classList.add("show");
+      emailInput.focus();
+    });
+  }
 
 })();
