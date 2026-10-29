@@ -105,8 +105,9 @@
     });
   });
 
-  // ---- modal with proper keyboard accessibility ----
+  // ---- modal with proper keyboard accessibility and front/back swap ----
   var lastFocusedElement = null;
+  var currentConcept = null;
 
   function openDetail(concept) {
     var data = CONCEPTS[concept];
@@ -123,6 +124,7 @@
     detailEdition.textContent = data.edition;
     detailFront.src = "assets/product/" + concept + "/front.svg";
     detailBack.src = "assets/product/" + concept + "/back.svg";
+    currentConcept = concept;
     detail.setAttribute("aria-hidden", "false");
     detail.setAttribute("tabindex", "-1");
     detail.scrollTop = 0;
@@ -170,6 +172,20 @@
       closeDetail();
     }
   });
+
+  // ---- detail-swap: swap front/back artwork ----
+  if (detailSwap) {
+    detailSwap.addEventListener("click", function () {
+      // Swap the image sources - toggle between front.svg and back.svg
+      if (!currentConcept) return;
+      var front = detailFront.src;
+      var back = detailBack.src;
+      // Determine current state by checking the filename
+      var isFrontShowing = front.includes("front.svg");
+      detailFront.src = isFrontShowing ? "assets/product/" + currentConcept + "/back.svg" : "assets/product/" + currentConcept + "/front.svg";
+      detailBack.src = isFrontShowing ? "assets/product/" + currentConcept + "/front.svg" : "assets/product/" + currentConcept + "/back.svg";
+    });
+  }
 
   // ---- toast (simple, non-intrusive) ----
   setTimeout(function () {
