@@ -1,17 +1,12 @@
 /* ============================================================
    SUCH MAN — app.js
-   Filter, concept detail dialog (modal), toast and year.
-   Redesigned: museum-spread hero + large front/back product cards.
+   Concept detail dialog (modal), photo gallery, and toast.
+   Redesigned: full-bleed original artwork, editorial layout.
    ============================================================ */
 
 (function () {
   "use strict";
 
-  var filterButtons = Array.prototype.slice.call(
-    document.querySelectorAll("[data-filter]"));
-  var conceptCards = Array.prototype.slice.call(
-    document.querySelectorAll(".products .product"));
-  var filterCount = document.getElementById("filter-count");
   var detail = document.getElementById("concept-detail");
   var detailFront = document.getElementById("detail-front");
   var detailBack = document.getElementById("detail-back");
@@ -30,11 +25,12 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // ---- concept data (verbatim phrase wording, concept-stage labels) ----
+
   var CONCEPTS = {
     "such-man-knows-code": {
       phrase: "SUCH MAN KNOWS CODE",
       kicker: "Drop 001 · The signature",
-      desc: "Washed-black heavyweight cotton. The chest mark is a square-cornered tag; the phrase sits in stacked letters across the upper back.",
+      desc: "The code is written in who we are. A clipped chest mark and a phrase set across the upper back.",
       fabric: "Washed-black heavyweight cotton",
       front: "Chest mark + stacked 'KNOWS CODE'",
       back: "Case-file stamp, 'NO EVIDENCE · NO CASE' at the button",
@@ -43,7 +39,7 @@
     "such-man-she-a-mi-cousin": {
       phrase: "SUCH MAN, SHE A MI COUSIN",
       kicker: "Drop 002 · The family story",
-      desc: "Bone heavyweight cotton. The phrase reads in three lines across the front; a family-line graphic sits on the upper back.",
+      desc: "A wide type lockup across the front; the family line sits on the upper back.",
       fabric: "Bone heavyweight cotton",
       front: "Wide type lockup across the front",
       back: "Family-line graphic on the upper back",
@@ -52,7 +48,7 @@
     "such-man-deh-deh": {
       phrase: "SUCH MAN DEH DEH",
       kicker: "Drop 003 · The disappearing act",
-      desc: "Faded charcoal heavyweight cotton. The phrase in white; the question in ochre; a location marker on the back.",
+      desc: "The phrase in white; the question in ochre; a corner of island landscape with a question marker.",
       fabric: "Faded charcoal heavyweight cotton",
       front: "White phrase + ochre question mark",
       back: "Island outline with a question marker",
@@ -61,7 +57,7 @@
     "mi-innocent": {
       phrase: "MI INNOCENT",
       kicker: "Drop 004 · The case file",
-      desc: "Charcoal heavyweight cotton. A proofreader's line beneath 'MI'; 'NO COMMENT' under 'INNOCENT'; a case-file stamp on the back.",
+      desc: "A proofreader's line beneath 'MI'; 'NO COMMENT' under 'INNOCENT'; the case file stamped on the back.",
       fabric: "Charcoal heavyweight cotton",
       front: "Proofreader's line + 'NO COMMENT'",
       back: "Case-file stamp, 'CASE STATUS: DISMISSED'",
@@ -70,7 +66,7 @@
     "just-a-friend": {
       phrase: "JUST A FRIEND",
       kicker: "Drop 005 · The denial",
-      desc: "Stone heavyweight cotton. A large FRIEND inside a dotted surveillance ring, with a quiet advisory line.",
+      desc: "A huge 'FRIEND' inside a dotted surveillance ring, with a quiet advisory line beneath.",
       fabric: "Stone heavyweight cotton",
       front: "Surveillance-ring graphic around FRIEND",
       back: "Ring motif and the advisory line",
@@ -79,7 +75,7 @@
     "no-evidence-no-case": {
       phrase: "NO EVIDENCE, NO CASE",
       kicker: "Drop 006 · The exoneration",
-      desc: "Washed-black heavyweight cotton. 'NO EVIDENCE' above the dominant 'NO CASE'; a case-file stamp on the back.",
+      desc: "\"NO EVIDENCE\" above the dominant 'NO CASE'; the back carries a double-ring case-file stamp.",
       fabric: "Washed-black heavyweight cotton",
       front: "Huge 'NO CASE' + 'NO EVIDENCE'",
       back: "Double-ring case-file stamp",
@@ -87,25 +83,8 @@
     }
   };
 
-  // ---- filter ----
-  filterButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      var filter = button.getAttribute("data-filter");
-      var visible = 0;
-      filterButtons.forEach(function (item) {
-        item.setAttribute("aria-pressed", String(item === button));
-      });
-      conceptCards.forEach(function (card) {
-        var categories = (card.getAttribute("data-category") || "").split(/\s+/);
-        var show = filter === "all" || categories.indexOf(filter) !== -1;
-        card.toggleAttribute("hidden", !show);
-        if (show) visible++;
-      });
-      if (filterCount) filterCount.textContent = visible + " concept" + (visible === 1 ? "" : "s");
-    });
-  });
-
   // ---- modal with proper keyboard accessibility and front/back swap ----
+
   var lastFocusedElement = null;
   var currentConcept = null;
 
@@ -152,6 +131,11 @@
   }
 
   // ---- card click opens detail ----
+
+  var conceptCards = Array.prototype.slice.call(
+    document.querySelectorAll(".products .product")
+  );
+
   conceptCards.forEach(function (card) {
     card.addEventListener("click", function () {
       openDetail(card.getAttribute("data-concept"));
@@ -159,6 +143,7 @@
   });
 
   // ---- close: Escape / overlay / close button ----
+
   if (detailClose) {
     detailClose.addEventListener("click", function () { closeDetail(); });
   }
@@ -174,13 +159,12 @@
   });
 
   // ---- detail-swap: swap front/back artwork ----
+
   if (detailSwap) {
     detailSwap.addEventListener("click", function () {
-      // Swap the image sources - toggle between front.svg and back.svg
       if (!currentConcept) return;
       var front = detailFront.src;
       var back = detailBack.src;
-      // Determine current state by checking the filename
       var isFrontShowing = front.includes("front.svg");
       detailFront.src = isFrontShowing ? "assets/product/" + currentConcept + "/back.svg" : "assets/product/" + currentConcept + "/front.svg";
       detailBack.src = isFrontShowing ? "assets/product/" + currentConcept + "/front.svg" : "assets/product/" + currentConcept + "/back.svg";
@@ -188,6 +172,7 @@
   }
 
   // ---- toast (simple, non-intrusive) ----
+
   setTimeout(function () {
     toast.classList.add("show");
   }, 1400);

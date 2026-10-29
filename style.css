@@ -2,7 +2,7 @@
    SUCH MAN — RARE BY DESIGN
    Independent Jamaican streetwear concept storefront
    Visual system: dark atmospheric, luxury editorial serif,
-   split front/back panels, gold/ochre accents, heavy negative space.
+   full-bleed original artwork, strong typography, negative space.
    No translucency, no glassmorphism, no background gradients.
    ============================================================ */
 
@@ -21,11 +21,8 @@
   --accent-soft: #c49a6e;
   --accent-ink: #5e4a32;
 
-  /* Display serif — luxury editorial, Didot/Bodoni lineage */
   --font-display: "Playfair Display", Georgia, serif;
-  /* Body sans-serif — clean, confident */
   --font-body: "Space Grotesk", "Arial", sans-serif;
-  /* Mono for technical codes, drop labels, section symbols */
   --font-mono: "DM Mono", "Courier New", monospace;
 
   --maxw: 1500px;
@@ -33,7 +30,6 @@
   --hdr-h: 76px;
 }
 
-/* ---- reset ---- */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -77,11 +73,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   display: flex; flex-direction: column; align-items: center; gap: 4px;
 }
 .topbrand .logo {
-  font-family: var(--font-mono);
-  font-size: 20px; font-weight: 700; letter-spacing: -0.04em;
-  color: var(--paper);
+  font-family: var(--font-mono); font-size: 20px; font-weight: 700;
+  letter-spacing: -0.04em; color: var(--paper);
 }
-.topbrand .logo sup { font-size: 9px; vertical-align: top; margin-left: 4px; color: var(--accent); }
+.topbrand .logo sup {
+  font-size: 9px; vertical-align: top; margin-left: 4px; color: var(--accent);
+}
 .topbrand .logo span { color: var(--muted); }
 .brandline {
   font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em;
@@ -98,11 +95,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .navinner { max-width: var(--maxw); margin: 0 auto; }
 .nav .logo {
-  font-family: var(--font-mono);
-  font-size: 21px; font-weight: 700; letter-spacing: -0.04em;
-  color: var(--paper);
+  font-family: var(--font-mono); font-size: 21px; font-weight: 700;
+  letter-spacing: -0.04em; color: var(--paper);
 }
-.nav .logo sup { font-size: 9px; vertical-align: top; margin-left: 4px; color: var(--accent); }
+.nav .logo sup {
+  font-size: 9px; vertical-align: top; margin-left: 4px; color: var(--accent);
+}
 .nav .logo span { color: var(--muted); }
 
 .navlinks {
@@ -118,7 +116,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .navlinks .btn:hover { background: var(--paper); color: var(--ink); }
 
-/* ---- hero (cinematic full-width reference image) ---- */
+/* ---- hero: full-bleed original artwork + editorial typography ---- */
 .hero {
   max-width: var(--maxw); margin: 0 auto;
   padding: 0 var(--pad);
@@ -126,7 +124,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .heroframe {
   display: grid; grid-template-columns: 1.05fr 0.95fr;
   gap: 5vw; align-items: center;
-  padding: 64px var(--pad) 72px;
+  padding: 80px var(--pad) 72px;
 }
 .hero .eyebrow {
   font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em;
@@ -140,8 +138,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .hero .accent { color: var(--accent); }
 .heroletad {
-  color: var(--muted); font-size: 15px; line-height: 1.75; max-width: 460px;
-  margin-bottom: 32px;
+  color: var(--muted); font-size: 15px; line-height: 1.75;
+  max-width: 460px; margin-bottom: 32px;
 }
 .heroactions { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero .mono {
@@ -151,30 +149,29 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 
 .heroimg {
-  position: relative; height: 100%; min-height: 560px; max-height: 720px;
+  position: relative; height: 100%; min-height: 560px; max-height: 760px;
+  overflow: hidden;
 }
-.heroimg img { width: 100%; height: 100%; object-fit: cover; }
-.imglabel {
-  position: absolute; left: 0; bottom: 0; right: 0;
-  padding: 14px 18px; background: var(--ink-2);
-  border-top: 1px solid var(--line); font-family: var(--font-mono);
-  font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--paper);
+.heroimg img {
+  width: 100%; height: 100%; object-fit: cover;
 }
 
-/* ---- collection ---- */
+/* ---- collection: large original artwork product cards ---- */
 .section { padding: 72px var(--pad); }
 .sectionhead { max-width: var(--maxw); margin: 0 auto; }
 .sectionhead .eyebrow {
   font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--olive-soft); margin-bottom: 14px;
+  text-transform: uppercase; color: var(--olive); margin-bottom: 14px;
 }
 .sectionhead h2 {
   font-family: var(--font-display); font-size: clamp(44px, 7vw, 88px);
   line-height: 1.05; letter-spacing: -0.04em; font-weight: 700; margin: 0;
 }
 .sectionhead h2 em { font-style: normal; color: var(--accent); }
-.sub { color: var(--muted); font-size: 15px; line-height: 1.7; max-width: 680px; margin: 0; }
+.sub {
+  color: var(--muted); font-size: 15px; line-height: 1.7;
+  max-width: 680px; margin: 0;
+}
 
 .products {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
@@ -188,63 +185,27 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .product:hover { border-color: var(--accent); }
 .product:focus-within { border-color: var(--paper); }
 
-.productfig { display: grid; grid-template-columns: 1fr; aspect-ratio: 4 / 3; position: relative; overflow: hidden; background: var(--ink-3); }
-.productfig img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-.product-reference {
-  width: 100%; height: 100%; object-fit: cover; display: block;
+.productimg {
+  position: relative; aspect-ratio: 1.09; overflow: hidden; background: var(--ink-3);
+}
+.productimg img {
+  width: 100%; height: 100%; object-fit: cover;
 }
 
-.product-reference.standalone {
-  width: 100%; height: 100%; object-fit: cover; display: block;
-  background: var(--ink-3);
-}
-
-/* front/back flip panel */
-.flippanel {
-  position: absolute; inset: 0; display: flex; flex-direction: column;
-  background: rgba(23, 23, 20, 0.92);
-}
-.flippanel[aria-hidden="true"] { display: none; }
-.flippanel img { width: 100%; height: 100%; object-fit: contain; }
-.flipbtn {
-  flex: 1; display: flex; align-items: center; justify-content: center;
-  background: var(--ink); border: 1px solid var(--accent);
-  color: var(--accent); font-family: var(--font-mono); font-size: 11px;
-  letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
-}
-.flipbtn:hover { border-color: var(--paper); color: var(--paper); }
-.flipbtnlabel { white-space: nowrap; }
-
-/* front/back panels within the flip panel */
-.frontpanel, .backpanel {
-  flex: 1; display: flex; flex-direction: column;
-  padding: 24px; border: 1px solid var(--line); background: var(--ink-2);
-}
-.panel-label {
-  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.16em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 18px;
-}
-.frontpanel img, .backpanel img { width: 100%; height: 100%; object-fit: contain; }
-
-.productfig .concept-badge {
-  position: absolute; top: 12px; left: 12px;
-  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--paper); border: 1px solid var(--paper);
+.product-tag {
+  position: absolute; bottom: 12px; left: 12px;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--paper);
+  background: rgba(23,23,20,0.72); border: 1px solid var(--line);
   padding: 6px 10px;
 }
-.productfig .tag {
-  position: absolute; bottom: 12px; right: 12px;
-  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--paper); background: rgba(23,23,20,0.72);
-  padding: 6px 10px; border: 1px solid var(--line);
-}
 
-.productmeta { padding: 18px 18px 20px; flex: 1; display: flex; flex-direction: column; }
+.productmeta {
+  padding: 18px 18px 20px; flex: 1; display: flex; flex-direction: column;
+}
 .productmeta .mono { color: var(--olive-soft); margin-bottom: 8px; }
 .productmeta h3 {
-  font-family: var(--font-display); font-size: 22px;
+  font-family: var(--font-display); font-size: clamp(22px, 3vw, 28px);
   letter-spacing: -0.03em; font-weight: 700; margin: 0 0 10px;
   line-height: 1.2;
 }
@@ -257,101 +218,49 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .productmeta .edition {
   font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: 0.08em;
 }
-.productmeta p { color: var(--muted); font-size: 13.5px; line-height: 1.65; margin: 0; }
+.productmeta .desc {
+  color: var(--muted); font-size: 13.5px; line-height: 1.65; margin: 0;
+}
 
-/* ---- concept detail modal ---- */
-.detail-overlay {
-  position: fixed; inset: 0; z-index: 50;
-  background: rgba(23, 23, 20, 0.93);
-  display: grid; place-items: center;
-}
-.detail-overlay[aria-hidden="true"] { display: none; }
-.detail-sheet {
-  width: min(1100px, 100%); max-height: 92vh;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
-  background: var(--ink-2); border: 1px solid var(--line);
-}
-.detail-viewport {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch;
-  min-height: 380px;
-}
-.detail-view {
-  border: 1px solid var(--line); background: var(--ink-3);
-  display: flex; flex-direction: column; min-height: 260px; position: relative;
-}
-.detail-view img { width: 100%; height: 100%; object-fit: contain; }
-.detail-view .viewtag {
-  position: absolute; top: 12px; left: 12px;
-  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--muted); padding: 8px 12px;
-}
-.detail-swap {
-  position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%);
-  display: flex; align-items: center; justify-content: center;
-  width: 44px; height: 44px; border: 1px solid var(--accent);
-  color: var(--paper); cursor: pointer;
-  transition: border-color 0.2s, color 0.2s;
-}
-.detail-swap:hover { border-color: var(--paper); color: var(--paper); }
-.detail-craft {
-  padding: 28px var(--pad) 40px; display: flex; flex-direction: column;
-  border-left: 2px solid var(--line);
-}
-.detail-craft .mono { color: var(--olive-soft); margin-bottom: 8px; }
-.detail-craft h3 {
-  font-family: var(--font-display); font-size: clamp(32px, 5vw, 56px);
-  letter-spacing: -0.03em; font-weight: 700; margin: 0 0 16px;
-}
-.detail-craft p { color: var(--muted); font-size: 14.5px; line-height: 1.7; margin: 0 0 18px; }
-.detail-spec {
-  display: flex; justify-content: space-between; padding: 12px 0;
-  border-top: 1px solid var(--line-soft); font-size: 13px;
-}
-.detail-spec dt { color: var(--muted); }
-.detail-spec dd { margin: 0; font-weight: 600; text-align: right; }
-.detail-spec:last-child { border-bottom: 1px solid var(--line-soft); }
-.concept-stage {
-  margin-top: 20px; padding: 14px 16px; border: 1px solid var(--accent);
-  background: rgba(167,122,82,0.1); color: var(--accent);
-  font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
-}
-.detail-actions { display: flex; gap: 12px; justify-content: flex-end; margin-top: 24px; }
-
-/* ---- lookbook (lifestyle) ---- */
+/* ---- lookbook: fashion editorial grid ---- */
 .lookbook {
-  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 5vw;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
   max-width: var(--maxw); margin: 0 auto;
 }
 .lookbookimg {
-  position: relative; height: 560px; min-height: 460px; overflow: hidden; background: var(--ink-3);
+  position: relative; aspect-ratio: 1.09; overflow: hidden; background: var(--ink-3);
 }
-.lookbookimg img { width: 100%; height: 100%; object-fit: cover; }
+.lookbookimg img {
+  width: 100%; height: 100%; object-fit: cover;
+}
 .lookbookinfo {
-  position: absolute; bottom: 0; left: 0; right: 0; padding: 32px var(--pad) 24px;
+  position: absolute; bottom: 0; left: 0; right: 0; padding: 28px var(--pad) 24px;
+  background: linear-gradient(to top, rgba(23,23,20,0.88) 0%, rgba(23,23,20,0.35) 70%, transparent 100%);
 }
 .lookbookinfo .mono {
-  font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+  font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
 }
-.lookbookinfo h3 {
-  font-family: var(--font-display); font-size: clamp(32px, 5vw, 56px);
-  line-height: 1.1; letter-spacing: -0.02em; font-weight: 700; margin: 0 0 14px;
+.lookbookinfo .lede {
+  font-family: var(--font-display); font-size: clamp(20px, 2.5vw, 28px);
+  line-height: 1.15; letter-spacing: -0.02em; font-weight: 700; margin: 0 0 10px;
 }
-.lookbookinfo p { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0 0 12px; }
-.lookbookinfo .mono { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line-soft); }
+.lookbookinfo p { color: var(--paper); font-size: 13px; line-height: 1.6; margin: 0 0 12px; }
+.lookbookinfo .mono { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line-soft); }
 
-/* ---- story ---- */
+/* ---- story: editorial image + text ---- */
 .story {
-  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 5vw; align-items: center; max-width: var(--maxw); margin: 0 auto;
+  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 5vw;
+  max-width: var(--maxw); margin: 0 auto;
+  align-items: center;
 }
 .storyimg {
-  height: 560px; min-height: 460px; position: relative; overflow: hidden; background: var(--ink-3);
+  position: relative; height: 100%; min-height: 460px; max-height: 560px; overflow: hidden; background: var(--ink-3);
 }
 .storyimg img { width: 100%; height: 100%; object-fit: cover; }
-.storycontent { padding: 0; }
 .storycontent .mono { color: var(--olive-soft); margin-bottom: 24px; }
 .storycontent h2 {
-  font-family: var(--font-display); font-size: clamp(44px, 7vw, 84px);
+  font-family: var(--font-display); font-size: clamp(40px, 7vw, 84px);
   line-height: 1.05; letter-spacing: -0.04em; font-weight: 700; margin: 0 0 32px;
 }
 .storycontent p { color: var(--muted); font-size: 15.5px; line-height: 1.75; margin: 0 0 24px; }
@@ -396,15 +305,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 /* ---- responsive ---- */
 @media (max-width: 1024px) {
-  .heroframe { grid-template-columns: 1fr; gap: 32px; padding: 48px var(--pad) 56px; }
+  .heroframe { grid-template-columns: 1fr; gap: 32px; padding: 64px var(--pad) 56px; }
   .heroimg { min-height: 420px; max-height: 620px; }
-  .lookbook { grid-template-columns: 1fr; }
-  .lookbookimg { height: 380px; min-height: 340px; }
+  .lookbook { grid-template-columns: repeat(2, 1fr); }
   .story { grid-template-columns: 1fr; }
-  .storyimg { height: 380px; min-height: 340px; }
-  .detail-sheet { grid-template-columns: 1fr; gap: 24px; }
-  .detail-viewport { grid-template-columns: 1fr; }
-  .detail-view { min-height: 220px; }
+  .storyimg { min-height: 340px; }
+  .productimg { aspect-ratio: 1.09; }
 }
 
 @media (max-width: 760px) {
@@ -413,14 +319,12 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   .navlinks { gap: 12px; }
   .navlinks a:not(.btn) { display: inline-block; font-size: 9.5px; }
   .navlinks .btn { display: none; }
-  .heroframe { padding: 36px var(--pad) 48px; }
+  .heroframe { padding: 48px var(--pad) 48px; }
   .heroimg { min-height: 340px; }
   .section { padding: 48px var(--pad); }
-  .products { grid-template-columns: 1fr; }
-  .detail-viewport { grid-template-columns: 1fr; }
-  .detail-view { min-height: 180px; }
-  .lookbookimg { height: 280px; min-height: 240px; }
-  .storyimg { height: 280px; min-height: 240px; }
+  .lookbook { grid-template-columns: 1fr; }
+  .lookbookimg { height: 320px; min-height: 260px; }
+  .storyimg { height: 320px; min-height: 260px; }
   .foot { flex-direction: column; text-align: center; }
   .foot .copy { max-width: 100%; }
 }
@@ -430,5 +334,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   .hero h1 { font-size: clamp(56px, 18vw, 92px); }
   .productmeta { padding: 14px; }
   .productmeta h3 { font-size: 19px; }
-  .detail-sheet { padding: 16px; }
+  .lookbookimg { height: 260px; min-height: 220px; }
+  .lookbookinfo { padding: 18px var(--pad) 14px; }
+  .foot { padding: 28px var(--pad) 20px; }
 }
