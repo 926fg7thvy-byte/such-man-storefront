@@ -1,0 +1,48 @@
+{
+  "storefront": "SUCH MAN",
+  "version": "1.0.0",
+  "reference_images": {
+    "c1": {
+      "file": "assets/images/reference/c1_full.png",
+      "concept": "such-man-knows-code",
+      "role": "hero",
+      "description": "Cinematic dark hero with split FRONT/BACK panels"
+    },
+    "c2": {
+      "file": "assets/images/reference/c2_full.png",
+      "concept": "such-man-she-a-mi-cousin",
+      "role": "product-photo",
+      "description": "Bold brand presentation, editorial layout"
+    },
+    "c3": {
+      "file": "assets/images/reference/c3_full.png",
+      "concept": "such-man-deh-deh",
+      "role": "product-photo",
+      "description": "Jamaican slang design, faded charcoal"
+    },
+    "c4": {
+      "file": "assets/images/reference/c4_full.png",
+      "concept": "mi-innocent",
+      "role": "product-photo",
+      "description": "Proofreader's line, case file stamp"
+    },
+    "c5": {
+      "file": "assets/images/reference/c5_full.png",
+      "concept": "just-a-friend",
+      "role": "product-photo",
+      "description": "Dotted surveillance ring campaign"
+    },
+    "c6": {
+      "file": "assets/images/reference/c6_full.png",
+      "concept": "no-evidence-no-case",
+      "role": "product-photo",
+      "description": "Double-ring case-file stamp"
+    }
+  },
+  "original_artwork": {
+    "preserved": [
+      "assets/product/no-evidence-no-case/front.svg",
+      "assets/product/no-evidence-no-case/back.svg"
+    ]
+  }
+}

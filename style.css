@@ -118,7 +118,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .navlinks .btn:hover { background: var(--paper); color: var(--ink); }
 
-/* ---- hero (cinematic full-width) ---- */
+/* ---- hero (cinematic full-width reference image) ---- */
 .hero {
   max-width: var(--maxw); margin: 0 auto;
   padding: 0 var(--pad);
@@ -153,7 +153,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .heroimg {
   position: relative; height: 100%; min-height: 560px; max-height: 720px;
 }
-.heroimg svg { width: 100%; height: 100%; object-fit: contain; }
+.heroimg img { width: 100%; height: 100%; object-fit: cover; }
 .imglabel {
   position: absolute; left: 0; bottom: 0; right: 0;
   padding: 14px 18px; background: var(--ink-2);
@@ -187,8 +187,17 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .product:hover { border-color: var(--accent); }
 .product:focus-within { border-color: var(--paper); }
-.productimg {
-  aspect-ratio: 3 / 4; position: relative; overflow: hidden; background: var(--ink-3);
+
+.productfig { display: grid; grid-template-columns: 1fr; aspect-ratio: 4 / 3; position: relative; overflow: hidden; background: var(--ink-3); }
+.productfig img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.product-reference {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+
+.product-reference.standalone {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  background: var(--ink-3);
 }
 
 /* front/back flip panel */
@@ -219,13 +228,13 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 .frontpanel img, .backpanel img { width: 100%; height: 100%; object-fit: contain; }
 
-.productimg .concept-badge {
+.productfig .concept-badge {
   position: absolute; top: 12px; left: 12px;
   font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em;
   text-transform: uppercase; color: var(--paper); border: 1px solid var(--paper);
   padding: 6px 10px;
 }
-.productimg .tag {
+.productfig .tag {
   position: absolute; bottom: 12px; right: 12px;
   font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--paper); background: rgba(23,23,20,0.72);
@@ -333,8 +342,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 /* ---- story ---- */
 .story {
-  display: grid; grid-template-columns: 1.05fr 0.95fr;
-  gap: 5vw; align-items: center; max-width: var(--maxw); margin: 0 auto;
+  display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 5vw; align-items: center; max-width: var(--maxw); margin: 0 auto;
 }
 .storyimg {
   height: 560px; min-height: 460px; position: relative; overflow: hidden; background: var(--ink-3);
@@ -398,6 +406,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   .detail-viewport { grid-template-columns: 1fr; }
   .detail-view { min-height: 220px; }
 }
+
 @media (max-width: 760px) {
   .topband { padding: 8px 20px; }
   .nav { height: auto; min-height: 64px; gap: 10px; }
@@ -415,6 +424,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   .foot { flex-direction: column; text-align: center; }
   .foot .copy { max-width: 100%; }
 }
+
 @media (max-width: 420px) {
   .hero .eyebrow { font-size: 9px; }
   .hero h1 { font-size: clamp(56px, 18vw, 92px); }
