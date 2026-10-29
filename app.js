@@ -16,18 +16,15 @@
     var swapBtn = card.querySelector(".product-swap-btn");
     var concept = card.getAttribute("data-concept");
 
-    // Determine which view is visible (data attribute for reliability)
     function updateSwapIcon() {
       var isFront = frontView.style.opacity !== "0";
       var icon = swapBtn.querySelector("svg");
       if (isFront) {
         icon.setAttribute("viewBox", "0 0 24 24");
-        icon.innerHTML =
-          '<path d="M7 16l-4-4 4-4"/><path d="M7 8h10"/>';
+        icon.innerHTML = '<path d="M7 16l-4-4 4-4"/><path d="M7 8h10"/>';
       } else {
         icon.setAttribute("viewBox", "0 0 24 24");
-        icon.innerHTML =
-          '<path d="M7 16l-4-4 4-4"/><path d="M7 8h10"/>';
+        icon.innerHTML = '<path d="M7 16l-4-4 4-4"/><path d="M7 8h10"/>';
       }
     }
 
@@ -124,6 +121,7 @@
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // ---- Concept data (verbatim phrase wording) ----
+
   var CONCEPTS = {
     "such-man-knows-code": {
       phrase: "SUCH MAN KNOWS CODE",
@@ -204,8 +202,11 @@
     document.getElementById("concept-back").textContent = data.back;
     document.getElementById("concept-edition").textContent = data.edition;
 
-    detailViewFront.querySelector("img").src = "assets/product/" + concept + "/front.svg";
-    detailViewBack.querySelector("img").src = "assets/product/" + concept + "/back.svg";
+    // Use product mockup images for detail view
+    var frontSrc = "assets/product-mockups/" + concept + "-front-mockup.png";
+    var backSrc = "assets/product-mockups/" + concept + "-back-mockup.png";
+    detailViewFront.querySelector("img").src = frontSrc;
+    detailViewBack.querySelector("img").src = backSrc;
     detailViewFront.style.opacity = "1";
     detailViewFront.style.transform = "scale(1)";
     detailViewBack.style.opacity = "0";
@@ -238,6 +239,7 @@
   }
 
   // ---- Card click opens detail ----
+
   var conceptCards = document.querySelectorAll(".product-card");
   conceptCards.forEach(function (card) {
     card.addEventListener("click", function () {
@@ -246,6 +248,7 @@
   });
 
   // ---- Close: Escape / overlay / close button ----
+
   if (detailClose) {
     detailClose.addEventListener("click", closeDetail);
   }
@@ -259,6 +262,7 @@
   });
 
   // ---- Detail swap (within modal) ----
+
   var currentConcept = null;
   if (detailSwap) {
     detailSwap.addEventListener("click", function () {
@@ -274,11 +278,13 @@
   }
 
   // ---- Toast ----
+
   setTimeout(function () {
     toast.classList.add("show");
   }, 1400);
 
   // ---- Email signup ----
+
   var emailForm = document.getElementById("email-form");
   var emailInput = document.getElementById("email-input");
   var emailError = document.getElementById("email-error");
