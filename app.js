@@ -1,6 +1,7 @@
 /* ============================================================
    SUCH MAN — app.js
-   Filter, concept detail dialog, toast and year.
+   Filter, concept detail dialog (modal), toast and year.
+   Redesigned: museum-spread hero + large front/back product cards.
    ============================================================ */
 
 (function () {
@@ -22,6 +23,7 @@
   var detailBackLabel = document.getElementById("concept-back");
   var detailEdition = document.getElementById("concept-edition");
   var detailClose = document.getElementById("detail-close");
+  var detailSwap = document.getElementById("detail-swap");
   var toast = document.getElementById("toast");
   var yearEl = document.getElementById("year");
 
@@ -86,24 +88,6 @@
   };
 
   // ---- filter ----
-  function openDetail(concept) {
-    var data = CONCEPTS[concept];
-    if (!data) return;
-    detailTitle.textContent = data.phrase;
-    detailKicker.textContent = data.kicker;
-    detailDesc.textContent = data.desc;
-    detailFabric.textContent = data.fabric;
-    detailFrontLabel.textContent = data.front;
-    detailBackLabel.textContent = data.back;
-    detailEdition.textContent = data.edition;
-    detailFront.src = "assets/product/" + concept + "/front.svg";
-    detailBack.src = "assets/product/" + concept + "/back.svg";
-    detail.setAttribute("aria-hidden", "false");
-    detail.scrollTop = 0;
-    document.body.style.overflow = "hidden";
-    toast.classList.remove("show");
-  }
-
   filterButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       var filter = button.getAttribute("data-filter");
@@ -121,13 +105,58 @@
     });
   });
 
-  // ---- modal: open on card click, close on Escape / overlay / close button ----
+  // ---- modal with proper keyboard accessibility ----
+  var lastFocusedElement = null;
+
+  function openDetail(concept) {
+    var data = CONCEPTS[concept];
+    if (!data) return;
+
+    lastFocusedElement = document.activeElement;
+
+    detailTitle.textContent = data.phrase;
+    detailKicker.textContent = data.kicker;
+    detailDesc.textContent = data.desc;
+    detailFabric.textContent = data.fabric;
+    detailFrontLabel.textContent = data.front;
+    detailBackLabel.textContent = data.back;
+    detailEdition.textContent = data.edition;
+    detailFront.src = "assets/product/" + concept + "/front.svg";
+    detailBack.src = "assets/product/" + concept + "/back.svg";
+    detail.setAttribute("aria-hidden", "false");
+    detail.setAttribute("tabindex", "-1");
+    detail.scrollTop = 0;
+    document.body.style.overflow = "hidden";
+    toast.classList.remove("show");
+
+    // Focus the swap button inside the dialog
+    setTimeout(function () {
+      var swap = detail.querySelector(".detail-swap");
+      if (swap) {
+        swap.setAttribute("tabindex", "-1");
+        swap.focus();
+        swap.setAttribute("tabindex", "0");
+      }
+    }, 50);
+  }
+
+  function closeDetail() {
+    detail.setAttribute("aria-hidden", "true");
+    detail.setAttribute("tabindex", "-1");
+    document.body.style.overflow = "";
+    if (lastFocusedElement && lastFocusedElement.focus) {
+      lastFocusedElement.focus();
+    }
+  }
+
+  // ---- card click opens detail ----
   conceptCards.forEach(function (card) {
     card.addEventListener("click", function () {
       openDetail(card.getAttribute("data-concept"));
     });
   });
 
+  // ---- close: Escape / overlay / close button ----
   if (detailClose) {
     detailClose.addEventListener("click", function () { closeDetail(); });
   }
@@ -142,14 +171,9 @@
     }
   });
 
-  function closeDetail() {
-    detail.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-  }
-
   // ---- toast (simple, non-intrusive) ----
   setTimeout(function () {
     toast.classList.add("show");
-  }, 1200);
+  }, 1400);
 
 })();
