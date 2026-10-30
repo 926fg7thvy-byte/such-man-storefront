@@ -120,6 +120,14 @@
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // ---- Cart count (dynamic, not hardcoded) ----
+  var cartCount = document.querySelector(".cart-count");
+  if (cartCount) {
+    // Products can add to cart by updating the cartCount variable
+    // For this concept storefront, the cart is empty until items are added
+    cartCount.textContent = "0";
+  }
+
   // ---- Concept data (verbatim phrase wording) ----
 
   var CONCEPTS = {
@@ -203,8 +211,8 @@
     document.getElementById("concept-edition").textContent = data.edition;
 
     // Use product mockup images for detail view
-    var frontSrc = "assets/product-mockups/" + concept + "-front-mockup.png";
-    var backSrc = "assets/product-mockups/" + concept + "-back-mockup.png";
+    var frontSrc = "public/assets/product-mockups/" + concept + "-front-mockup-v2.png";
+    var backSrc = "public/assets/product-mockups/" + concept + "-back-mockup-v2.png";
     detailViewFront.querySelector("img").src = frontSrc;
     detailViewBack.querySelector("img").src = backSrc;
     detailViewFront.style.opacity = "1";

@@ -1,0 +1,26 @@
+{
+  "just-a-friend": {
+    "front": "/Users/own/Projects/such-man-storefront/assets/product/just-a-friend/front.svg",
+    "back": "/Users/own/Projects/such-man-storefront/assets/product/just-a-friend/back.svg"
+  },
+  "mi-innocent": {
+    "front": "/Users/own/Projects/such-man-storefront/assets/product/mi-innocent/front.svg",
+    "back": "/Users/own/Projects/such-man-storefront/assets/product/mi-innocent/back.svg"
+  },
+  "no-evidence-no-case": {
+    "front": "/Users/own/Projects/such-man-storefront/assets/product/no-evidence-no-case/front.svg",
+    "back": "/Users/own/Projects/such-man-storefront/assets/product/no-evidence-no-case/back.svg"
+  },
+  "such-man-deh-deh": {
+    "front": "/Users/own/Projects/such-man-storefront/assets/product/such-man-deh-deh/front.svg",
+    "back": "/Users/own/Projects/such-man-storefront/assets/product/such-man-deh-deh/back.svg"
+  },
+  "such-man-knows-code": {
+    "front": "/Users/own/Projects/such-man-storefront/assets/product/such-man-knows-code/front.svg",
+    "back": "/Users/own/Projects/such-man-storefront/assets/product/such-man-knows-code/back.svg"
+  },
+  "such-man-she-a-mi-cousin": {
+    "front": "/Users/own/Projects/such-man-storefront/assets/product/such-man-she-a-mi-cousin/front.svg",
+    "back": "/Users/own/Projects/such-man-storefront/assets/product/such-man-she-a-mi-cousin/back.svg"
+  }
+}
